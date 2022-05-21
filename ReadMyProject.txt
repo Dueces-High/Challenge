@@ -1,0 +1,3 @@
+﻿Please see my Django project.
+
+-I was not so clear on the connections restrictions but it can be easily updated and so I put together a model regardless. I can always update the code. 

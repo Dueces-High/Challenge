@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+
+  HTML LINKS
+  <ul class="nav">
+
+         <li class="nav-item">
+    <a class="nav-link" href="{% url 'Full_Interface' %}">FULL INTERFACE LIST</a>
+  </li>
+
+     <li class="nav-item">
+    <a class="nav-link" href="{% url 'FullInventory' %}">FULL DEVICE INVENTORY</a>
+  </li>
+
+
+      <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'POSTLINK' %}">POST DEVICE INVENTORY</a>
+     </li>
+ <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'POSTLINK2' %}">POST INTERFACE INVENTORY</a>
+     </li>
+</ul>
+
+  Json
+
+ <ul class="nav">
+            <li class="nav-item">
+    <a class="nav-link" href="{% url 'JSONDEVICEFULL' %}">FULL DEVICE INVENTORY</a>
+  </li>
+
+
+
+         <li class="nav-item">
+    <a class="nav-link" href="{% url 'InterFULL' %}">FULL INTERFACE LIST</a>
+  </li>
+</ul>
+
+
+
+{% for items in All_Interface %}
+
+
+<h2
+>Device: {{ items }}</h2>
+  <p>Name: {{ items.Name }}</p>
+<p>Form Factor: {{ items.Form_Factor }}</p>
+
+
+----------------------------------------------
+
+  {% endfor %}
+  </body>
+</html>

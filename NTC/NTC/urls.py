@@ -17,13 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from Routers_Switches import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('', views.router_list),
-    path('Routers/<int:id>', views.Routerinfo),
-    path('Interfaces/', views.Interfaces),
-    path('Interfaces/<int:id>', views.Interfacesinfo)
+    path('', views.device_list, name='FullInventory'),
+    path('InterfacesInventory', views.FInterfaces, name = 'Full_Interface'),
+    path('Devices/', views.router_list,name='JSONDEVICEFULL'),
+    path('Devices/<int:id>', views.Routerinfo),
+    path('Interfaces/', views.Interfaces, name='InterFULL'),
+    path('Interfaces/<int:id>', views.Interfacesinfo),
+    path('post', views.posting, name='POSTLINK'),
+    path('post2', views.posting2, name='POSTLINK2')
 
 ]
 

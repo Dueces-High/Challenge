@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  <body>
+
+  HTML LINKS
+  <ul class="nav">
+
+         <li class="nav-item">
+    <a class="nav-link" href="{% url 'Full_Interface' %}">FULL INTERFACE LIST</a>
+  </li>
+
+     <li class="nav-item">
+    <a class="nav-link" href="{% url 'FullInventory' %}">FULL DEVICE INVENTORY</a>
+  </li>
+
+
+      <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'POSTLINK' %}">POST DEVICE INVENTORY</a>
+     </li>
+ <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'POSTLINK2' %}">POST INTERFACE INVENTORY</a>
+     </li>
+</ul>
+
+  Json
+
+ <ul class="nav">
+            <li class="nav-item">
+    <a class="nav-link" href="{% url 'JSONDEVICEFULL' %}">FULL DEVICE INVENTORY</a>
+  </li>
+
+
+
+         <li class="nav-item">
+    <a class="nav-link" href="{% url 'InterFULL' %}">FULL INTERFACE LIST</a>
+  </li>
+</ul>
+
+
+
+
+{% for items in All_Routers %}
+
+
+<h2>Device: {{ items }}</h2>
+
+<h3>Management_IP_address: {{ items.Management_IP_address }}</h3>
+<h3>Hardware Vendor: {{ items.Hardware_vendor }}</h3>
+<h3>Hardware Type: {{ items.Hardware_Type }}</h3>
+<h3>Software Version: {{ items.Software_version }}</h3>
+<h3>Roles: {{ items.Roles }}</h3>
+<h3>Physical Address: {{ items.Physical_Address }}</h3>
+
+<h3> Hostname: {{ items.Hostname }}</h3>
+-------------------------------------------------------------------------------------
+
+  </body>
+
+  {% endfor %}
+</html>

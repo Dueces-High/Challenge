@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Router(models.Model):
+    id = models.CharField(max_length=100, primary_key=True)
     Hostname = models.CharField(max_length=100, unique=True)
     Management_IP_address = models.CharField(max_length=30)
     Hardware_vendor = models.CharField(max_length=30)
